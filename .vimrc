@@ -126,3 +126,6 @@ set smartcase
 "" set nobackup
 "" set nowritebackup
 "" set noswapfile
+
+"Use xsel to copy + register to sys clipboard, + reg is only available to sys whilevim is open
+autocmd VimLeave * call system("xsel -ib", getreg('+'))
