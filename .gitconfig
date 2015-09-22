@@ -1,0 +1,15 @@
+[user]
+	name = Zach VanMeter
+	email = zvanmeter@gmail.com
+[push]
+	default = simple
+[merge]
+	defaultToUpstream = true
+[branch]
+	autosetupmerge = always
+[rerere]
+	enabled = true
+[rebase]
+	autosquash = true
+[url "https://zvanmeter@github.com"]
+	insteadOf = https://github.com
