@@ -12,4 +12,7 @@
 [rebase]
 	autosquash = true
 [url "https://zvanmeter@github.com"]
-	insteadOf = https://github.com
+    insteadOf = https://github.com
+[credential]
+        helper = cache --timeout=3600
+
