@@ -123,9 +123,9 @@ set ignorecase
 set smartcase
 
 " Disable stupid backup and swap files - they trigger too many events for file system watchers
-"" set nobackup
-"" set nowritebackup
-"" set noswapfile
+set nobackup
+set nowritebackup
+set noswapfile
 
 "Use xsel to copy + register to sys clipboard, + reg is only available to sys whilevim is open
 autocmd VimLeave * call system("xsel -ib", getreg('+'))
