@@ -1,0 +1,10 @@
+APT-GET
+vim-gnome
+xsel
+zsh
+xcape
+gnome-tweak-tool
+tmux
+
+GIT CLONE
+oh-my-zsh
