@@ -5,6 +5,14 @@ zsh
 xcape
 gnome-tweak-tool
 tmux
+git
 
 GIT CLONE
 oh-my-zsh
+
+DOWNLOAD
+~/.vim/colors/wombat256mod.vim
+
+OS
+mkdir ~/bin
+Add key remap on startup
