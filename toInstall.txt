@@ -6,6 +6,7 @@ xcape
 gnome-tweak-tool
 tmux
 git
+ack-grep
 
 GIT CLONE
 oh-my-zsh
