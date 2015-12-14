@@ -15,8 +15,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "ESC",
-                    "label": "ESC"
+                    "key": "EQUALS",
+                    "label": "="
                 },
                 "1": {
                     "key": "F11",
@@ -117,8 +117,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "EQUALS",
-                    "label": "="
+                    "key": "ESCAPE",
+                    "label": "ESC"
                 },
                 "2": {
                     "key": "#:flashMode()",
@@ -501,8 +501,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "RIGHT",
-                    "label": "\u2192"
+                    "key": "LALT",
+                    "label": "LALT"
                 }
             },
             "w": 4,
@@ -544,8 +544,8 @@
                     "label": "LGUI"
                 },
                 "1": {
-                    "key": "SYS:SLEEP",
-                    "label": "SLEEP"
+                    "key": "SYS:POWERDOWN",
+                    "label": "POWER"
                 }
             },
             "w": 4,
