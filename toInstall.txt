@@ -1,4 +1,4 @@
-APT-GET
+UBUNTU APT-GET
 vim-gnome
 xsel
 zsh
@@ -7,6 +7,20 @@ gnome-tweak-tool
 tmux
 git
 ack-grep
+
+MAC BREW
+git
+vim
+
+MAC INSTALL
+mailplane
+atom
+seil
+karabiner
+itsycal
+hyperswitch
+scrollreverser
+iterm2
 
 GIT CLONE
 oh-my-zsh

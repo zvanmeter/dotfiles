@@ -127,5 +127,6 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-"Use xsel to copy + register to sys clipboard, + reg is only available to sys whilevim is open
-autocmd VimLeave * call system("xsel -ib", getreg('+'))
+"Copy + register to sys clipboard, + reg is only available to sys whilevim is open
+"NEEDS OhMyZSH installed
+autocmd VimLeave * call system("clipcopy", getreg('+'))
