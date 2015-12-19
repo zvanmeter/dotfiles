@@ -21,6 +21,7 @@ itsycal
 hyperswitch
 scrollreverser
 iterm2
+bettertouchtool
 
 GIT CLONE
 oh-my-zsh
