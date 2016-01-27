@@ -218,6 +218,10 @@
                 "0": {
                     "key": "TAB",
                     "label": "TAB"
+                },
+                "2": {
+                    "key": "#:ledControl( 4, 15, 0 )",
+                    "label": "LED+"
                 }
             },
             "w": 6,
@@ -308,6 +312,10 @@
                 "0": {
                     "key": "CAPSLOCK",
                     "label": "CAPSLK"
+                },
+                "2": {
+                    "key": "#:ledControl( 3, 15, 0 )",
+                    "label": "LED-"
                 }
             },
             "w": 6,
@@ -425,6 +433,10 @@
                 "0": {
                     "key": "LSHIFT",
                     "label": "L\u21d1"
+                },
+                "2": {
+                    "key": "#:ledControl( 5, 0, 0 )",
+                    "label": "LED OFF"
                 }
             },
             "w": 6,
@@ -815,6 +827,10 @@
                     "key": "J",
                     "label": "J"
                 },
+                "1": {
+                    "key": "CONS:VOLUMEDOWN",
+                    "label": "VOL-"
+                },
                 "2": {
                     "key": "P4",
                     "label": "P4"
@@ -831,6 +847,10 @@
                 "0": {
                     "key": "K",
                     "label": "K"
+                },
+                "1": {
+                    "key": "CONS:VOLUMEUP",
+                    "label": "VOL+"
                 },
                 "2": {
                     "key": "P5",
@@ -1082,8 +1102,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "FUN1",
-                    "label": "\u01921"
+                    "key": "RGUI",
+                    "label": "RGUI"
                 }
             },
             "w": 4,
@@ -1095,8 +1115,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "DOWN",
-                    "label": "\u2193"
+                    "key": "FUN1",
+                    "label": "\u01921"
                 }
             },
             "w": 4,
