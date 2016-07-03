@@ -1,3 +1,6 @@
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 alias zr='source ~/.zshrc'
 alias l='ls -lAhF'
 alias ll='l -tr'
