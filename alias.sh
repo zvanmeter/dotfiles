@@ -16,3 +16,10 @@ alias sqlint='paste | awk '"'"'{print $0","}'"'"' | sed "$ s/.$//" | clip && ech
 -l) lines modfied in copybuffer"'
 
 my_zsh_plugins=(common-aliases git sudo web-search debian tmux nyan copydir osx)
+
+##MAC Specific
+alias apfix='sudo killall -9 AirPlayUIAgent && sudo killall -9 AirPlayXPCHelper'
+alias gggpush='ggpush && afplay "$HOME/sound_clips/ggpush.mp3"'
+
+##Ubuntu Specific
+alias opn='gnome-open .' > /dev/null 2>&1
