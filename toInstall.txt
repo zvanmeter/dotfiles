@@ -9,7 +9,18 @@ git
 ack-grep
 
 MAC BREW
+ack
+cowsay
+dos2unix
+figlet
+fortune
 git
+gnu-sed
+perl
+pyenv-virtualenv
+python
+ruby
+tmux
 vim
 
 MAC INSTALL
@@ -19,7 +30,6 @@ seil
 karabiner
 itsycal
 hyperswitch
-scrollreverser
 iterm2
 bettertouchtool
 
