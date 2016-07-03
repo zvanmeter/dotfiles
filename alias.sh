@@ -15,4 +15,4 @@ alias sqlist='paste | awk '"'"'{print "\x27"$0"\x27,"}'"'"' | sed "$ s/.$//" | c
 alias sqlint='paste | awk '"'"'{print $0","}'"'"' | sed "$ s/.$//" | clip && echo "$(paste | wc
 -l) lines modfied in copybuffer"'
 
-my_zsh_plugins=(common-aliases git sudo web-search debian tmux nyan copydir)
+my_zsh_plugins=(common-aliases git sudo web-search debian tmux nyan copydir osx)
