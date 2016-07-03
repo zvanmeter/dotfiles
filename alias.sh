@@ -1,3 +1,5 @@
+my_zsh_plugins=(common-aliases git sudo web-search debian tmux nyan copydir osx)
+
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
@@ -14,8 +16,6 @@ alias sqlist='paste | awk '"'"'{print "\x27"$0"\x27,"}'"'"' | sed "$ s/.$//" | c
 "$(paste | wc -l) lines modfied in copybuffer"'
 alias sqlint='paste | awk '"'"'{print $0","}'"'"' | sed "$ s/.$//" | clip && echo "$(paste | wc
 -l) lines modfied in copybuffer"'
-
-my_zsh_plugins=(common-aliases git sudo web-search debian tmux nyan copydir osx)
 
 ##MAC Specific
 alias apfix='sudo killall -9 AirPlayUIAgent && sudo killall -9 AirPlayXPCHelper'
