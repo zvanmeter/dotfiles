@@ -18,4 +18,7 @@
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore_global
+[alias]
+    undo = reset --soft HEAD~
+    serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
 
