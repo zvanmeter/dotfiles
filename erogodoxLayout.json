@@ -238,6 +238,10 @@
                 "0": {
                     "key": "G",
                     "label": "G"
+                },
+                "1": {
+                    "key": "ENTER",
+                    "label": "\u21b5"
                 }
             }
         },
@@ -356,8 +360,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "FUN1",
-                    "label": "\u01921"
+                    "key": "BACKTICK",
+                    "label": "`"
                 }
             }
         },
@@ -464,8 +468,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "LALT",
-                    "label": "LALT"
+                    "key": "ENTER",
+                    "label": "\u21b5"
                 }
             }
         },
@@ -477,8 +481,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "DELETE",
-                    "label": "DEL"
+                    "key": "FUN1",
+                    "label": "\u01921"
                 }
             }
         },
@@ -492,6 +496,10 @@
                 "0": {
                     "key": "BACKSPACE",
                     "label": "BKSP"
+                },
+                "1": {
+                    "key": "DELETE",
+                    "label": "DEL"
                 }
             }
         },
@@ -529,8 +537,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "LEFT",
-                    "label": "\u2190"
+                    "key": "CONS:VOLUMEUP",
+                    "label": "VOL+"
                 }
             }
         },
@@ -542,8 +550,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "BACKTICK",
-                    "label": "`"
+                    "key": "CONS:VOLUMEDOWN",
+                    "label": "VOL-"
                 }
             }
         },
@@ -557,10 +565,6 @@
                 "0": {
                     "key": "LGUI",
                     "label": "LGUI"
-                },
-                "1": {
-                    "key": "SYS:POWERDOWN",
-                    "label": "POWER"
                 }
             }
         },
@@ -830,10 +834,6 @@
                     "key": "J",
                     "label": "J"
                 },
-                "1": {
-                    "key": "CONS:VOLUMEDOWN",
-                    "label": "VOL-"
-                },
                 "2": {
                     "key": "P4",
                     "label": "P4"
@@ -850,10 +850,6 @@
                 "0": {
                     "key": "K",
                     "label": "K"
-                },
-                "1": {
-                    "key": "CONS:VOLUMEUP",
-                    "label": "VOL+"
                 },
                 "2": {
                     "key": "P5",
