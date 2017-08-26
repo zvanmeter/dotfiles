@@ -1,1 +1,9 @@
 *~
+*.bak
+*.log
+*.pyc
+*.swp
+.DS_Store
+.envrc
+.idea
+.python-version
