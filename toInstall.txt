@@ -16,22 +16,28 @@ figlet
 fortune
 git
 gnu-sed
-perl
-pyenv-virtualenv
 python
-ruby
 tmux
 vim
 
 MAC INSTALL
-mailplane
 atom
-seil
-karabiner
-itsycal
+bettertouchtool
+beyond compare
+bitbar
+chrome
+docker
+f.lux
 hyperswitch
 iterm2
-bettertouchtool
+itsycal
+insomniax
+jetbrains toolbox
+mailplane
+meteo
+sketchup
+slack
+sourcetree
 
 GIT CLONE
 oh-my-zsh
