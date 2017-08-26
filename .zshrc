@@ -65,20 +65,26 @@ alias trim='awk '"'"'{$1=$1};1'"'"''
 alias gulp='npm run gulp'
 alias jspm='npm run jspm'
 
+funcion play(){
+  fileName=${1}
+  volume=${2}
+  [ -n "${volume}" ] && osascript -e "set Volume ${volume}"
+  (afplay "${HOME}/sound_clips/${fileName}.mp3"&)
+}
 
 ##MAC Specific
 alias apfix='sudo killall -9 AirPlayUIAgent && sudo killall -9 AirPlayXPCHelper'
-alias gggpush='ggpush && osascript -e "set Volume 3" && (afplay "${HOME}/sound_clips/ggpush.mp3"&)'
-alias train='osascript -e "set Volume 3" && (afplay "${HOME}/sound_clips/chugga.mp3"&)'
-alias lol='afplay "${HOME}/sound_clips/laugh_track.mp3"'
-alias boo='afplay "${HOME}/sound_clips/boo.mp3"'
-alias 1738='afplay "${HOME}/sound_clips/1738.mp3"'
-alias blast='afplay "${HOME}/sound_clips/instantrapairhorn.mp3"'
-alias forge='afplay "${HOME}/sound_clips/what_is_the_forge.mp3"'
-alias walk='afplay "${HOME}/sound_clips/walkin_here.mp3"'
-alias bhd='afplay "${HOME}/sound_clips/black_hawk_down.mp3"'
-alias standup='afplay "${HOME}/sound_clips/stand_up.mp3"'
-alias cmo='osascript -e "set Volume 8" && (afplay "${HOME}/sound_clips/cash_me.mp3"&)'
+alias gggpush='ggpush && play ggpush 3'
+alias train='play chugga'
+alias lol='play laugh_track'
+alias boo='play boo'
+alias 1738='play 1738'
+alias blast='play instant_rap_air_horn'
+alias forge='play what_is_the_forge'
+alias walk='play walkin_here'
+alias bhd='play black_hawk_down'
+alias standup='play stand_up'
+alias cmo='play cash_me 8'
 
 ##Ubuntu Specific
 alias opn='gnome-open .' > /dev/null 2>&1
