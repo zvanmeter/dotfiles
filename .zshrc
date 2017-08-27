@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/zvm/.oh-my-zsh
+export ZSH="${HOME}/.oh-my-zsh"
 
 # ~/.oh-my-zsh/themes/
 ZSH_THEME="robbyrussell"
@@ -7,35 +7,34 @@ HYPHEN_INSENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=""
-plugins="${plugins} battery"
-plugins="${plugins} brew"
-plugins="${plugins} common-aliases"
-plugins="${plugins} copydir"
-plugins="${plugins} debian"
-plugins="${plugins} docker"
-plugins="${plugins} git"
-plugins="${plugins} nyan"
-plugins="${plugins} osx"
-plugins="${plugins} sudo"
-plugins="${plugins} tmux"
-plugins="${plugins} web-search"
-plugins="${plugins} zsh-autosuggestions"
-source ${ZSH}/oh-my-zsh.sh
+# Plugins loaded from ~/.oh-my-zsh/plugins/*
+plugins=(
+  brew
+  common-aliases
+  copydir
+  copyfile
+  docker
+  git
+  nyan
+  osx
+  sudo
+  web-search
+  zsh-autosuggestions
+)
+source "${ZSH}/oh-my-zsh.sh"
 
-PATH=""
-PATH="${PATH}:${HOME}/bin"
-PATH="${PATH}:/usr/local"
-PATH="${PATH}:/usr/local/sbin"
-PATH="${PATH}:/usr/local/bin"
-PATH="${PATH}:/usr/bin"
-PATH="${PATH}:/bin"
-PATH="${PATH}:/usr/sbin"
-PATH="${PATH}:/sbin"
-export PATH
+path=(
+  "${HOME}/bin"
+  /usr/local
+  /usr/local/sbin
+  /usr/local/bin
+  /usr/bin
+  /bin
+  /usr/sbin
+  /sbin
+)
 export LANG=en_US.UTF-8
-export EDITOR='vim'
+export EDITOR=vim
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -46,10 +45,12 @@ function http(){curl -s http://httpcode.info/${1} | sed -e "/\s*</d" -e "/^\s*$/
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 eval "$(direnv hook zsh)"
+source ${HOME}/.z_repo/z.sh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 alias zshrc="${EDITOR} ~/.zshrc && zr"
 alias zr='source ~/.zshrc'
-alias l='ls -lAhF'
+alias l='exa -abghl --time-style long-iso --git'
 alias ll='l -tr | tail -15'
 alias tmux='env TERM=screen-256color tmux'
 alias C='clipcopy' #ohmyzsh builtin fuction
