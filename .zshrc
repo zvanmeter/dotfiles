@@ -71,6 +71,7 @@ function http(){
 
 function play(){
   fileName=${1}
+  # 7=Max, 3=Mid, 0=Mute
   volume=${2}
   [ -n "${volume}" ] && osascript -e "set Volume ${volume}"
   (afplay "${HOME}/sound_clips/${fileName}.mp3"&)
@@ -88,7 +89,7 @@ alias forge='play what_is_the_forge'
 alias walk='play walkin_here'
 alias bhd='play black_hawk_down'
 alias standup='play stand_up'
-alias cmo='play cash_me 8'
+alias cmo='play cash_me 7'
 
 ##Ubuntu Specific
 alias opn='gnome-open .' > /dev/null 2>&1
