@@ -40,8 +40,6 @@ export EDITOR=vim
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 
-function http(){curl -s http://httpcode.info/${1} | sed -e "/\s*</d" -e "/^\s*$/d"}
-
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 eval "$(direnv hook zsh)"
@@ -66,7 +64,12 @@ alias trim='awk '"'"'{$1=$1};1'"'"''
 alias gulp='npm run gulp'
 alias jspm='npm run jspm'
 
-funcion play(){
+function http(){
+  httpStatusCode="${1}"
+  curl -s "http://httpcode.info/${httpStatusCode}" | sed -e "/\s*</d" -e "/^\s*$/d"
+}
+
+function play(){
   fileName=${1}
   volume=${2}
   [ -n "${volume}" ] && osascript -e "set Volume ${volume}"
