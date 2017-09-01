@@ -49,20 +49,25 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 alias zshrc="${EDITOR} ~/.zshrc && zr"
 alias zr='source ~/.zshrc'
 alias l='exa -abghl --time-style long-iso --git'
-alias ll='l -tr | tail -15'
+alias ll='l --sort modified -r --color always | head -21'
 alias tmux='env TERM=screen-256color tmux'
 alias C='clipcopy' #ohmyzsh builtin fuction
 alias paste='clippaste' #overrides Unix paste, ohmyzsh function
 alias csv='sed "s/,,/, ,/g;s/,,/, ,/g" | column -s, -t'
 alias tsv='sed "s/^\t/ \t/g;s/\t\t/\t \t/g;s/\t\t/\ty\t/g" | column -s$'"'"'\t'"'"' -t'
-alias sqlist='paste | awk '"'"'{print "\x27"$0"\x27,"}'"'"' | sed "$ s/.$//" | clipcopy && echo "$(paste | wc -l) lines modfied in copybuffer"'
-alias sqlint='paste | awk '"'"'{print $0","}'"'"' | sed "$ s/.$//" | clipcopy && echo "$(paste | wc -l) lines modfied in copybuffer"'
-alias sqlwith='paste | awk '"'"'{print "(\x27"$0"\x27),"}'"'"' | sed "$ s/.$//" | clipcopy && echo "$(paste | wc -l) lines modfied in copybuffer"'
-alias cs='paste | sort -n | clipcopy && echo "$(paste | wc -l) lines modfied in copybuffer"'
-alias csu='paste | sort -n | uniq | clipcopy && echo "$(paste | wc -l) lines modfied in copybuffer"'
 alias trim='awk '"'"'{$1=$1};1'"'"''
 alias gulp='npm run gulp'
 alias jspm='npm run jspm'
+alias paren='sed -e "s/^/(/" -e "s/$/)/"'
+alias dq='sed -e "s/^/\"/" -e "s/$/\"/"'
+alias sq='sed -e "s/^/'"'"'/" -e "s/$/'"'"'/"'
+alias comma='sed "s/$/,/" | sed "$ s/.$//"'
+alias pline='echo "$(clippaste | wc -l) lines on clipboard"'
+alias sqlstr='clippaste | sq | comma | clipcopy && pline'
+alias sqlint='clippaste | comma | clipcopy && pline'
+alias sqlwith='clippaste | sq | paren | comma | clipcopy && pline'
+alias cs='clippaste | sort -n | clipcopy && pline'
+alias csu='clippaste | sort -n | uniq | clipcopy && pline'
 
 function http(){
   httpStatusCode="${1}"
