@@ -14,6 +14,7 @@ plugins=(
   copydir
   copyfile
   docker
+  fasd
   git
   nyan
   osx
@@ -40,7 +41,6 @@ export EDITOR=vim
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 
 eval "$(direnv hook zsh)"
-source /usr/local/etc/profile.d/z.sh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
