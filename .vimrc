@@ -2,10 +2,17 @@
 autocmd! bufwritepost .vimrc source %
 
 " Better copy & paste
+" Sep 2017: A lot seems unneeded in macos brew vim... revisit in linuxland later
+
 " When you want to paste large blocks of code into vim, press F2 before you
 " paste. At the bottom you should see ``-- INSERT (paste) --``.
-set pastetoggle=<F2>
-set clipboard=unnamed
+" set pastetoggle=<F2>
+" set clipboard=unnamed
+" clipcopy is OhMyZSH installed
+" autocmd VimLeave * call system("clipcopy", getreg('+'))
+
+" Copy visual selection to system clipboard
+map <leader>c "+y
 
 " Mouse and backspace
 set mouse=a  " on OSX press ALT and click
@@ -86,9 +93,6 @@ set tw=96   " width of document (used by gd)
 "set fo-=t   " don't automatically wrap text when typing
 nnoremap <C-l> :set relativenumber!<cr>
 
-" Copy visual selection to system clipboard
-map <leader>c "+y
-
 " Disable relative numbers on lost focus
 :au FocusLost * :set norelativenumber
 :au FocusGained * :set relativenumber
@@ -127,7 +131,3 @@ set smartcase
 set nobackup
 set nowritebackup
 set noswapfile
-
-"Copy + register to sys clipboard, + reg is only available to sys whilevim is open
-"NEEDS OhMyZSH installed
-autocmd VimLeave * call system("clipcopy", getreg('+'))
