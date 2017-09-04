@@ -16,7 +16,7 @@ map <leader>c "+y
 
 " Mouse and backspace
 set mouse=a  " on OSX press ALT and click
-"" set bs=2     " make backspace behave like normal again
+set bs=2     " make backspace behave like normal again
 
 "Hard Mode: Disable Arrow Keys
 noremap <Up> <NOP>
