@@ -1,5 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
+export LANG=en_US.UTF-8
+export EDITOR=vim
 
 # ~/.oh-my-zsh/themes/
 ZSH_THEME="robbyrussell"
@@ -33,8 +35,6 @@ path=(
   /usr/sbin
   /sbin
 )
-export LANG=en_US.UTF-8
-export EDITOR=vim
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
