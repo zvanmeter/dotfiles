@@ -1,6 +1,11 @@
 "Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
 
+" Rebind <Leader> key
+" I like to have it here becuase it is easier to reach than the default and
+" it is next to ``m`` and ``n`` which I use for navigating between tabs.
+let mapleader = " "
+
 " Better copy & paste
 " Sep 2017: A lot seems unneeded in macos brew vim... revisit in linuxland later
 
@@ -23,11 +28,6 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
-
-" Rebind <Leader> key
-" I like to have it here becuase it is easier to reach than the default and
-" it is next to ``m`` and ``n`` which I use for navigating between tabs.
-let mapleader = " "
 
 " Bind nohl - Removes highlight of your last search
 " ``<C>`` stands for ``CTRL`` and therefore ``<C-n>`` stands for ``CTRL+n``
