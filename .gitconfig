@@ -22,3 +22,5 @@
 [core]
   editor = vim
   excludesfile = ~/.gitignore_global
+[includeIf "gitdir:~/code/project/"]
+  path = ~/.gitconfig-project
