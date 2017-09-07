@@ -1,24 +1,24 @@
 [user]
-	name = Zach VanMeter
-	email = zvanmeter@gmail.com
+  name = Zach VanMeter
+  email = zvanmeter@gmail.com
 [push]
-	default = simple
+  default = simple
 [merge]
-	defaultToUpstream = true
+  defaultToUpstream = true
 [branch]
-	autosetupmerge = always
+  autosetupmerge = always
 [rerere]
-	enabled = true
+  enabled = true
 [rebase]
-	autosquash = true
+  autosquash = true
 [url "https://zvanmeter@github.com"]
-	insteadOf = https://github.com
+  insteadOf = https://github.com
 [credential]
-        helper = cache --timeout=3600
+  helper = cache --timeout=3600
 [alias]
-	undo = reset --soft HEAD~
-	serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
-	force = push --force-with-lease
+  undo = reset --soft HEAD~
+  serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
+  force = push --force-with-lease
 [core]
-	editor = vim
-	excludesfile = ~/.gitignore_global 
+  editor = vim
+  excludesfile = ~/.gitignore_global
