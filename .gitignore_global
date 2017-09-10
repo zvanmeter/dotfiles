@@ -8,3 +8,4 @@
 .idea
 .python-version
 venv
+.cache
