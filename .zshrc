@@ -44,7 +44,8 @@ eval "$(direnv hook zsh)"
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-alias zshrc="${EDITOR} ~/.zshrc && zr"
+alias path='echo ${PATH} | tr ":" "\n"'
+alias zshrc='${EDITOR} ~/.zshrc && zr'
 alias zr='source ~/.zshrc'
 alias l='exa -abghl --time-style long-iso --git'
 alias ll='l --sort modified -r --color always | head -21'
@@ -92,7 +93,8 @@ alias forge='play what_is_the_forge'
 alias walk='play walkin_here'
 alias bhd='play black_hawk_down'
 alias standup='play stand_up'
-alias cmo='play cash_me 7'
+alias cmo='play cash_me_outside 7'
+alias hsf='play hawaiian_shirt_friday'
 
 ##Ubuntu Specific
 alias opn='gnome-open .' > /dev/null 2>&1
