@@ -23,17 +23,19 @@ map <leader>c "+y
 set mouse=a  " on OSX press ALT and click
 set bs=2     " make backspace behave like normal again
 
-"Hard Mode: Disable Arrow Keys
+" Hard Mode: Disable Arrow Keys
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
 " Bind nohl - Removes highlight of your last search
-" ``<C>`` stands for ``CTRL`` and therefore ``<C-n>`` stands for ``CTRL+n``
 noremap <C-n> :nohl<CR>
 vnoremap <C-n> :nohl<CR>
 inoremap <C-n> :nohl<CR>
+
+" Insert Line from normal mode
+nnoremap <C-o> I<CR><Esc>k0D
 
 " Quicksave command/
 " Note - Add "stty -ixon" to .zshrc file
