@@ -47,7 +47,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 alias path='echo ${PATH} | tr ":" "\n"'
 alias zshrc='${EDITOR} ~/.zshrc && zr'
 alias zr='source ~/.zshrc'
-alias l='exa -abghl --time-style long-iso --git'
+alias l='exa -abghl --time-style long-iso'
 alias ll='l --sort modified -r --color always | head -21'
 alias tmux='env TERM=screen-256color tmux'
 alias C='clipcopy' #ohmyzsh builtin fuction
@@ -95,6 +95,7 @@ alias bhd='play black_hawk_down'
 alias standup='play stand_up'
 alias cmo='play cash_me_outside 7'
 alias hsf='play hawaiian_shirt_friday'
+alias bieb='play baby_opening'
 
 ##Ubuntu Specific
 alias opn='gnome-open .' > /dev/null 2>&1
