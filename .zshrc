@@ -2,6 +2,7 @@
 export ZSH="${HOME}/.oh-my-zsh"
 export LANG=en_US.UTF-8
 export EDITOR=vim
+export JAVA_HOME="/Library/Java/Home"
 
 # ~/.oh-my-zsh/themes/
 ZSH_THEME="robbyrussell"
