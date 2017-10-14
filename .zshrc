@@ -68,6 +68,7 @@ alias sqlint='clippaste | comma | clipcopy && pline'
 alias sqlwith='clippaste | sq | paren | comma | clipcopy && pline'
 alias cs='clippaste | sort -n | clipcopy && pline'
 alias csu='clippaste | sort -n | uniq | clipcopy && pline'
+unalias fd
 
 function http(){
   httpStatusCode="${1}"
