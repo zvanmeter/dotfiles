@@ -84,7 +84,7 @@ function play(){
 ##MAC Specific
 alias apfix='sudo killall -9 AirPlayUIAgent && sudo killall -9 AirPlayXPCHelper'
 alias gggpush='ggpush && play ggpush 3'
-alias 1738='play 1738'
+alias 1738='play 1738_trap_queen'
 alias bhd='play black_hawk_down'
 alias bieb='play baby_opening'
 alias blast='play instant_rap_air_horn'
@@ -98,7 +98,8 @@ alias hsf='play hawaiian_shirt_friday'
 alias lol='play laugh_track'
 alias standup='play stand_up'
 alias train='play chugga'
-alias walk='play walkin_here'
+alias walk='play midnight_cowboy_im_walkin_here'
+alias halo='play halo_title_theme'
 
 ##Ubuntu Specific
 alias opn='gnome-open .' > /dev/null 2>&1
