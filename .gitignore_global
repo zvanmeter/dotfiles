@@ -1,12 +1,13 @@
-*~
 *.bak
+*.iml
 *.log
 *.pyc
 *.swp
+*~
 .DS_Store
+.cache
 .envrc
 .idea
 .python-version
-venv
-.cache
 spike-*
+venv
