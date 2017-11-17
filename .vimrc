@@ -106,11 +106,16 @@ autocmd InsertLeave * :set relativenumber
 if exists("&colorcolumn")
     set colorcolumn=96
     highlight ColorColumn ctermbg=233
+    autocmd FileType gitcommit set colorcolumn=50,72
+    autocmd FileType gitcommit highlight ColorColumn ctermbg=022
 endif
 
 " easier formatting of paragraphs
 vmap Q gq
 nmap Q gqap
+
+" git commit
+autocmd FileType gitcommit set spell spelllang=en_us
 
 " Useful settings
 set history=700
