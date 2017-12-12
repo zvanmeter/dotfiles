@@ -33,7 +33,13 @@ function installPython() {
 }
 
 function setupDirEnv(){
-  envrc="source venv/bin/activate\n${envrc}"
+  defaultEnvrc=''
+  defaultEnvrc+='if [ -e "../.envrc" ]; then\n'
+  defaultEnvrc+='  source_env ..\n'
+  defaultEnvrc+='fi\n'
+  defaultEnvrc+='source venv/bin/activate\n'
+
+  envrc="${defaultEnvrc}${envrc}"
   if hash direnv 2>/dev/null; then
     deactivate
     if [ ! -f ".envrc" ]; then
