@@ -94,6 +94,7 @@ set tw=96   " width of document (used by gd)
 "set nowrap  " don't automatically wrap on load
 "set fo-=t   " don't automatically wrap text when typing
 nnoremap <C-l> :set relativenumber!<cr>
+set ruler
 
 " Disable relative numbers on lost focus
 :au FocusLost * :set norelativenumber
