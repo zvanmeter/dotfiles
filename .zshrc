@@ -102,6 +102,9 @@ alias standup='play stand_up'
 alias train='play chugga'
 alias walk='play midnight_cowboy_im_walkin_here'
 alias halo='play halo_title_theme'
+alias ting='play roadman_shaq_gun_sound_freestyle'
+alias rg='play eminem_rap_god'
+alias shut='play jack_black_listen_to_my_order'
 
 ##Ubuntu Specific
 alias opn='gnome-open .' > /dev/null 2>&1
