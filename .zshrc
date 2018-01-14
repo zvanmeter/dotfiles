@@ -35,6 +35,7 @@ path=(
   /bin
   /usr/sbin
   /sbin
+  "${HOME}/go/bin"
 )
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
