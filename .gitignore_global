@@ -9,5 +9,6 @@
 .envrc
 .idea
 .python-version
+debug-*
 spike-*
 venv
