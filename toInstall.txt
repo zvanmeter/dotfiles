@@ -11,36 +11,48 @@ ack-grep
 MAC BREW
 ack
 cowsay
+direnv
 dos2unix
+exa
+fd
 figlet
 fortune
 git
+git-extras
 gnu-sed
+java
 python
-tmux
 vim
+z
+zsh
+zsh-autosuggestions
+zsh-syntax-highlighting
 
 MAC INSTALL
 atom
-bettertouchtool
+authy
 beyond compare
 bitbar
 chrome
+copyclip 2
+cura (lulzbot)
+dasiydisk
 docker
-f.lux
 hyperswitch
 iterm2
-itsycal
 insomniax
+istatmenus
 jetbrains toolbox
+magnet
 mailplane
-meteo
 sketchup
 slack
 sourcetree
+todoist
 
 GIT CLONE
 oh-my-zsh
+qmk
 
 DOWNLOAD
 ~/.vim/colors/wombat256mod.vim
