@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+cd ${HOME}
 mkdir -p bin
 ln -sf .vimrc .ideavimrc
 ln -sf /usr/local/bin/pip2 bin/pip
@@ -14,3 +15,14 @@ ln -sf dotfiles/.vimrc .vimrc
 ln -sf dotfiles/.zshrc .zshrc
 
 ln -sf Google\ Drive/sound_clips sound_clips
+
+brew_zsh_path="/usr/local/bin/zsh"
+
+if ! grep -q "${brew_zsh_path}" /etc/shells; then
+  echo "${brew_zsh_path}" | sudo tee -a /etc/shells > /dev/null
+fi
+
+mac_os_current_shell="$(dscl . -read /Users/$USER UserShell | cut -d ' ' -f2-)"
+if [ ${brew_zsh_path} != ${mac_os_current_shell} ]; then
+  chsh -s "${brew_zsh_path}"
+fi
