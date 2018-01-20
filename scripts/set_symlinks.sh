@@ -17,12 +17,19 @@ dotFileSymLinker () {
   ln -sf "dotfiles/${dotFileSource}" "${dotFileName}"
 }
 
-#Home bin Setup
-ln -sf /usr/local/bin/pip2 bin/pip
-ln -sf /usr/local/bin/python2 bin/python
-ln -sf ${HOME}/dotfiles/scripts/make_virtual_environment.sh bin/mkvirt
-ln -sf ${HOME}/dotfiles/scripts/restart_mac_bluethooth.sh bin/rbt
-ln -sf ${HOME}/dotfiles/scripts/team_contact_details.sh bin/team
+scriptSymLinker () {
+  binName=${1}
+  scriptName=${2}
+  ln -sf ${HOME}/dotfiles/scripts/${scriptName} bin/${binName}
+}
+
+setBinLinks () {
+  ln -sf /usr/local/bin/pip2 bin/pip
+  ln -sf /usr/local/bin/python2 bin/python
+  scriptSymLinker mkvirt make_virtual_environment.sh
+  scriptSymLinker rbt restart_mac_bluethooth.sh
+  scriptSymLinker team team_contact_details.sh
+}
 
 linkHomeDirDotFiles () {
   dotFileSymLinker .gitconfig
@@ -51,3 +58,4 @@ setDefaultShell () {
 makeDirectories
 linkHomeDirDotFiles
 setDefaultShell
+setBinLinks
