@@ -45,6 +45,7 @@ path=(
 eval "$(direnv hook zsh)"
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/etc/profile.d/z.sh
 
 alias path='echo ${PATH} | tr ":" "\n"'
 alias zshrc='${EDITOR} ~/.zshrc && zr'
