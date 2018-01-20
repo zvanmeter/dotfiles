@@ -23,12 +23,21 @@ scriptSymLinker () {
   ln -sf ${HOME}/dotfiles/scripts/${scriptName} bin/${binName}
 }
 
+aliasSymLinker () {
+  aliasName=${1}
+  realLocation=${2}
+  ln -sf "${realLocation}" "bin/${aliasName}"
+}
+
 setBinLinks () {
-  ln -sf /usr/local/bin/pip2 bin/pip
-  ln -sf /usr/local/bin/python2 bin/python
   scriptSymLinker mkvirt make_virtual_environment.sh
   scriptSymLinker rbt restart_mac_bluethooth.sh
   scriptSymLinker team team_contact_details.sh
+}
+
+setBinAliases () {
+  aliasSymLinker pip "$(which pip2)"
+  aliasSymLinker python "$(which python2)"
 }
 
 linkHomeDirDotFiles () {
@@ -59,3 +68,4 @@ makeDirectories
 linkHomeDirDotFiles
 setDefaultShell
 setBinLinks
+setBinAliases
