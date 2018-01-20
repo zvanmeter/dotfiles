@@ -2,6 +2,11 @@
 set -e
 cd ${HOME}
 
+makeDirectories () {
+  mkdir -p 'code/me'
+  mkdir -p 'bin'
+}
+
 dotFileSymLinker () {
   dotFileName=${1}
   if [ -z "${2}" ]; then
@@ -13,7 +18,6 @@ dotFileSymLinker () {
 }
 
 #Home bin Setup
-mkdir -p bin
 ln -sf /usr/local/bin/pip2 bin/pip
 ln -sf /usr/local/bin/python2 bin/python
 ln -sf ${HOME}/dotfiles/scripts/make_virtual_environment.sh bin/mkvirt
@@ -42,4 +46,5 @@ if [ ${brew_zsh_path} != ${mac_os_current_shell} ]; then
   chsh -s "${brew_zsh_path}"
 fi
 
+makeDirectories
 linkHomeDirDotFiles
