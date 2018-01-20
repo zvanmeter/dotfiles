@@ -35,16 +35,19 @@ linkHomeDirDotFiles () {
 #Map Google Drive folders
 ln -sf Google\ Drive/sound_clips sound_clips
 
-#Shell Changes
-brew_zsh_path="/usr/local/bin/zsh"
-if ! grep -q "${brew_zsh_path}" /etc/shells; then
-  echo "${brew_zsh_path}" | sudo tee -a /etc/shells > /dev/null
-fi
+setDefaultShell () {
+  brew_zsh_path="/usr/local/bin/zsh"
+  mac_os_current_shell="$(dscl . -read /Users/$USER UserShell | cut -d ' ' -f2-)"
 
-mac_os_current_shell="$(dscl . -read /Users/$USER UserShell | cut -d ' ' -f2-)"
-if [ ${brew_zsh_path} != ${mac_os_current_shell} ]; then
-  chsh -s "${brew_zsh_path}"
-fi
+  if ! grep -q "${brew_zsh_path}" /etc/shells; then
+    echo "${brew_zsh_path}" | sudo tee -a /etc/shells > /dev/null
+  fi
+
+  if [ ${brew_zsh_path} != ${mac_os_current_shell} ]; then
+    chsh -s "${brew_zsh_path}"
+  fi
+}
 
 makeDirectories
 linkHomeDirDotFiles
+setDefaultShell
