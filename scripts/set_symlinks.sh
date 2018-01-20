@@ -7,26 +7,33 @@ makeDirectories () {
   mkdir -p 'bin'
 }
 
+symLinker () {
+  source="${1}"
+  target="${2}"
+
+  if [ -z "${target}" ]; then
+        target="$(basename "${source}")"
+  fi
+
+  ln -sfn "${source}" "${target}"
+}
+
 dotFileSymLinker () {
   dotFileName=${1}
-  if [ -z "${2}" ]; then
-        dotFileSource="${dotFileName}"
-  else
-        dotFileSource="${2}"
-  fi
-  ln -sf "dotfiles/${dotFileSource}" "${dotFileName}"
+  dotFileLinkName=${2}
+  symLinker "dotfiles/${dotFileName}" "${dotFileLinkName}"
 }
 
 scriptSymLinker () {
   binName=${1}
   scriptName=${2}
-  ln -sf ${HOME}/dotfiles/scripts/${scriptName} bin/${binName}
+  symLinker ${HOME}/dotfiles/scripts/${scriptName} bin/${binName}
 }
 
 aliasSymLinker () {
   aliasName=${1}
   realLocation=${2}
-  ln -sf "${realLocation}" "bin/${aliasName}"
+  symLinker "${realLocation}" "bin/${aliasName}"
 }
 
 setBinLinks () {
