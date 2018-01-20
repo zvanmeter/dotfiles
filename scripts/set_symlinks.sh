@@ -5,6 +5,8 @@ cd ${HOME}
 makeDirectories () {
   mkdir -p 'code/me'
   mkdir -p 'bin'
+  symLinker 'Google Drive/sound_clips'
+  symLinker 'code/me/dotfiles'
 }
 
 symLinker () {
@@ -54,9 +56,6 @@ linkHomeDirDotFiles () {
   dotFileSymLinker .vimrc .ideavimrc
   dotFileSymLinker .zshrc
 }
-
-#Map Google Drive folders
-ln -sf Google\ Drive/sound_clips sound_clips
 
 setDefaultShell () {
   brew_zsh_path="/usr/local/bin/zsh"
