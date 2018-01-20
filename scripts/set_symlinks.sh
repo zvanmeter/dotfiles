@@ -52,6 +52,7 @@ setBinAliases () {
 linkHomeDirDotFiles () {
   dotFileSymLinker .gitconfig
   dotFileSymLinker .gitignore_global
+  dotFileSymLinker .vim
   dotFileSymLinker .vimrc
   dotFileSymLinker .vimrc .ideavimrc
   dotFileSymLinker .zshrc
