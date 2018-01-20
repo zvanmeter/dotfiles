@@ -44,7 +44,7 @@ linkHomeDirDotFiles () {
   dotFileSymLinker .gitconfig
   dotFileSymLinker .gitignore_global
   dotFileSymLinker .vimrc
-  dotFileSymLinker .ideavimrc .vimrc
+  dotFileSymLinker .vimrc .ideavimrc
   dotFileSymLinker .zshrc
 }
 
