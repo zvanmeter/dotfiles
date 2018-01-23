@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -e
 cd ${HOME}
+
+BREW_INSTALLED="$(brew list -1)"
 BREW_INSTALL_DIR='/usr/local/bin'
 
 makeDirectories () {
@@ -72,6 +74,30 @@ setDefaultShell () {
   fi
 }
 
+brewInstaller () {
+  toInstall="${1}"
+
+  if ! echo "${BREW_INSTALLED}" | grep -q "${toInstall}" ; then
+    HOMEBREW_NO_AUTO_UPDATE=1 brew install "${toInstall}"
+    BREW_INSTALLED="$(brew list -1)"
+  fi
+}
+
+installCoreBrew () {
+  brewInstaller ack
+  brewInstaller direnv
+  brewInstaller exa
+  brewInstaller fd
+  brewInstaller git
+  brewInstaller python
+  brewInstaller vim
+  brewInstaller z
+  brewInstaller zsh
+  brewInstaller zsh-autosuggestions
+  brewInstaller zsh-syntax-highlighting
+}
+
+installCoreBrew
 makeDirectories
 linkHomeDirDotFiles
 setDefaultShell
