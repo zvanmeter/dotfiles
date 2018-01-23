@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -e
 cd ${HOME}
+BREW_INSTALL_DIR='/usr/local/bin'
 
 makeDirectories () {
   mkdir -p 'code/me'
@@ -45,8 +46,8 @@ setBinLinks () {
 }
 
 setBinAliases () {
-  aliasSymLinker pip "$(which pip2)"
-  aliasSymLinker python "$(which python2)"
+  aliasSymLinker pip "${BREW_INSTALL_DIR}/pip2"
+  aliasSymLinker python "${BREW_INSTALL_DIR}/python2"
 }
 
 linkHomeDirDotFiles () {
@@ -59,7 +60,7 @@ linkHomeDirDotFiles () {
 }
 
 setDefaultShell () {
-  brew_zsh_path="/usr/local/bin/zsh"
+  brew_zsh_path="${BREW_INSTALL_DIR}/zsh"
   mac_os_current_shell="$(dscl . -read /Users/$USER UserShell | cut -d ' ' -f2-)"
 
   if ! grep -q "${brew_zsh_path}" /etc/shells; then
