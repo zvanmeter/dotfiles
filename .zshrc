@@ -87,7 +87,7 @@ function play(){
 
 ##MAC Specific
 alias apfix='sudo killall -9 AirPlayUIAgent && sudo killall -9 AirPlayXPCHelper'
-alias gggpush='ggpush && play ggpush 3'
+alias gggpush='ggpush && play girls_generation_gee 3'
 alias 1738='play 1738_trap_queen'
 alias bhd='play black_hawk_down'
 alias bieb='play baby_opening'
@@ -96,6 +96,7 @@ alias boo='play boo'
 alias cantina='play star_wars_cantina_music'
 alias chant='play tibetan_monk_chant'
 alias cmo='play cash_me_outside 7'
+alias dv='play star_wars_imperial_march'
 alias forge='play what_is_the_forge'
 alias herd='play swedish_cattle_herding_call'
 alias hsf='play hawaiian_shirt_friday'
