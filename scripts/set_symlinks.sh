@@ -2,6 +2,12 @@
 set -e
 cd ${HOME}
 
+# Restore shell history
+# Restore ssh
+# Install Homebrew
+# Clone this repo to code/me/dotfiles
+# Run this script
+
 BREW_INSTALLED="$(brew list -1)"
 BREW_INSTALL_DIR='/usr/local/bin'
 
