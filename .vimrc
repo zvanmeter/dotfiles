@@ -90,7 +90,7 @@ syntax on
 " Showing line numbers and length
 set number  " show line numbers
 set relativenumber " show relative line numbers
-set tw=96   " width of document (used by gd)
+set tw=120   " width of document (used by gd)
 "set nowrap  " don't automatically wrap on load
 "set fo-=t   " don't automatically wrap text when typing
 nnoremap <C-l> :set relativenumber!<cr>
@@ -105,7 +105,7 @@ autocmd InsertEnter * :set norelativenumber
 autocmd InsertLeave * :set relativenumber
 
 if exists("&colorcolumn")
-    set colorcolumn=96
+    set colorcolumn=120
     highlight ColorColumn ctermbg=233
     autocmd FileType gitcommit set colorcolumn=50,72
     autocmd FileType gitcommit highlight ColorColumn ctermbg=022
