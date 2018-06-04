@@ -68,6 +68,7 @@ alias pline='echo "$(clippaste | wc -l) lines on clipboard"'
 alias sqlstr='clippaste | sq | comma | clipcopy && pline'
 alias sqlint='clippaste | comma | clipcopy && pline'
 alias sqlwith='clippaste | sq | paren | comma | clipcopy && pline'
+alias sqlwithint='clippaste | paren | comma | clipcopy && pline'
 alias cs='clippaste | sort -n | clipcopy && pline'
 alias csu='clippaste | sort -n | uniq | clipcopy && pline'
 unalias fd
