@@ -110,5 +110,8 @@ alias rg='play eminem_rap_god'
 alias shut='play jack_black_listen_to_my_order'
 alias galva='play galva_pronunciation'
 
+alias pc='open -a pycharm "$(git rev-parse --show-toplevel || echo ".")"'
+alias st='open -a sourcetree "$(git rev-parse --show-toplevel || echo ".")"'
+
 ##Ubuntu Specific
 alias opn='gnome-open .' > /dev/null 2>&1
