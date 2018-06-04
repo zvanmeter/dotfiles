@@ -49,16 +49,20 @@ function setupDirEnv(){
   fi
 }
 
+pythonVersion='python2'
+if [ 'python3' == "${virtType}" ]; then
+  pythonVersion='python3'
+fi
+
 rm -rf venv
-virtualenv venv
+virtualenv -p ${pythonVersion} venv
 source venv/bin/activate
 
-if [ -z "${virtType}" ]; then
-  installPython
-elif [ "python" == "${virtType}" ]; then
-  installPython
-elif [ "node" == "${virtType}" ]; then
+if [ "node" == "${virtType}" ]; then
   installNode
+else
+  installPython
 fi
 
 setupDirEnv
+pip install -Ur requirements.txt
