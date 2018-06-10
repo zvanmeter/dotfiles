@@ -91,11 +91,17 @@ brewInstaller () {
 
 installCoreBrew () {
   brewInstaller ack
+  brewInstaller coreutils
   brewInstaller direnv
   brewInstaller exa
   brewInstaller fd
   brewInstaller git
+  brewInstaller gnu-sed
+  brewInstaller grep
+  brewInstaller jq
+  brewInstaller pipenv
   brewInstaller python
+  brewInstaller python@2
   brewInstaller vim
   brewInstaller z
   brewInstaller zsh
