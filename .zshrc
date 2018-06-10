@@ -19,7 +19,6 @@ plugins=(
   docker
   fasd
   git
-  nyan
   osx
   sudo
   web-search
