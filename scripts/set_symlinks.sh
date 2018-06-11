@@ -83,7 +83,7 @@ setDefaultShell () {
 brewInstaller () {
   toInstall="${1}"
 
-  if ! echo "${BREW_INSTALLED}" | grep -q "${toInstall}" ; then
+  if ! echo "${BREW_INSTALLED}" | grep -q "^${toInstall}$" ; then
     HOMEBREW_NO_AUTO_UPDATE=1 brew install "${toInstall}"
     BREW_INSTALLED="$(brew list -1)"
   fi
