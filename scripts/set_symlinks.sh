@@ -109,7 +109,13 @@ installCoreBrew () {
   brewInstaller zsh-syntax-highlighting
 }
 
+installFonts () {
+  HOMEBREW_NO_AUTO_UPDATE=1 brew tap caskroom/fonts
+  HOMEBREW_NO_AUTO_UPDATE=1 brew cask install font-source-code-pro font-fira-code font-iosevka
+}
+
 installCoreBrew
+installFonts
 makeDirectories
 linkHomeDirDotFiles
 setDefaultShell
