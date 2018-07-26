@@ -49,6 +49,7 @@ source /usr/local/etc/profile.d/z.sh
 alias gitip='echo "git clone git://$(ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '\''{print $2}'\'')/"'
 alias gitserve='git daemon --reuseaddr --base-path=. --export-all --verbose --enable=receive-pack'
 alias gserve='gitip && gitserve'
+alias gu='git reset --soft HEAD~'
 alias path='echo ${PATH} | tr ":" "\n"'
 alias zshrc='${EDITOR} ~/.zshrc && zr'
 alias zr='source ~/.zshrc'

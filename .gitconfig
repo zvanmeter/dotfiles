@@ -16,8 +16,6 @@
 [credential]
   helper = cache --timeout=3600
 [alias]
-  undo = reset --soft HEAD~
-  serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
   force = push --force-with-lease
 [core]
   editor = vim
