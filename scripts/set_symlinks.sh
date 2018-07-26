@@ -114,6 +114,13 @@ installFonts () {
   HOMEBREW_NO_AUTO_UPDATE=1 brew cask install font-source-code-pro font-fira-code font-iosevka
 }
 
+generateGitHubKey () {
+  gitHubKeyFile="${HOME}/.ssh/github"
+  if [ ! -f "${gitHubKeyFile}" ]; then
+    ssh-keygen -t rsa -b 4096 -f "${gitHubKeyFile}" -N ''
+  fi
+}
+
 installCoreBrew
 installFonts
 makeDirectories
@@ -121,3 +128,4 @@ linkHomeDirDotFiles
 setDefaultShell
 setBinLinks
 setBinAliases
+generateGitHubKeuy
