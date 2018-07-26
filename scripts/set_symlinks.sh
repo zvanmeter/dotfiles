@@ -121,6 +121,13 @@ generateGitHubKey () {
   fi
 }
 
+addTouchBarToSudo () {
+  if [ -d "/System/Library/PreferencePanes/TouchID.prefPane" ] ; then
+    sudo gsed -i '/pam_tid.so/d' /etc/pam.d/sudo
+    sudo gsed -i '2s/^/auth       sufficient     pam_tid.so\n/' /etc/pam.d/sudo
+  fi
+}
+
 installCoreBrew
 installFonts
 makeDirectories
@@ -129,3 +136,4 @@ setDefaultShell
 setBinLinks
 setBinAliases
 generateGitHubKeuy
+addTouchBarToSudo
