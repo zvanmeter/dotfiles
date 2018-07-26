@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
+VENV_FOLDER_NAME='.venv'
 virtType="${1}"
 virtVersion="${2}"
 envrc=''
@@ -13,7 +14,7 @@ function installNode() {
     validVersion="$(nodeenv --list 2>&1 | tr '\t' '\n' | grep ^${virtVersion} | tail -1)"
     if [ -z "${validVersion}" ]; then
       echo "Unable to find node version for ${virtVersion}"
-      rm -rf venv
+      rm -rf "${VENV_FOLDER_NAME}"
       exit 1
     fi
     nodeEnvVersion="--node=${validVersion}"
@@ -37,7 +38,7 @@ function setupDirEnv(){
   defaultEnvrc+='if [ -e "../.envrc" ]; then\n'
   defaultEnvrc+='  source_env ..\n'
   defaultEnvrc+='fi\n'
-  defaultEnvrc+='source venv/bin/activate\n'
+  defaultEnvrc+="source \"${VENV_FOLDER_NAME}/bin/activate\n\""
 
   envrc="${defaultEnvrc}${envrc}"
   if hash direnv 2>/dev/null; then
@@ -54,15 +55,17 @@ if [ 'python3' == "${virtType}" ]; then
   pythonVersion='python3'
 fi
 
-rm -rf venv
-virtualenv -p ${pythonVersion} venv
-source venv/bin/activate
+rm -rf "${VENV_FOLDER_NAME}" "node_modules"
+virtualenv -p ${pythonVersion} "${VENV_FOLDER_NAME}"
+source "${VENV_FOLDER_NAME}/bin/activate"
 
 if [ "node" == "${virtType}" ]; then
   installNode
+  setupDirEnv
+  npm install
 else
   installPython
+  setupDirEnv
+  pip install -Ur requirements.txt
 fi
 
-setupDirEnv
-pip install -Ur requirements.txt
