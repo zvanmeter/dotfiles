@@ -38,7 +38,7 @@ function setupDirEnv(){
   defaultEnvrc+='if [ -e "../.envrc" ]; then\n'
   defaultEnvrc+='  source_env ..\n'
   defaultEnvrc+='fi\n'
-  defaultEnvrc+="source \"${VENV_FOLDER_NAME}/bin/activate\n\""
+  defaultEnvrc+="source \"${VENV_FOLDER_NAME}/bin/activate\"\n"
 
   envrc="${defaultEnvrc}${envrc}"
   if hash direnv 2>/dev/null; then
@@ -66,6 +66,10 @@ if [ "node" == "${virtType}" ]; then
 else
   installPython
   setupDirEnv
-  pip install -Ur requirements.txt
+  if [ -f requirements-dev.txt ]; then
+    pip install -Ur requirements-dev.txt
+  elif [ -f requirements.txt ]; then
+    pip install -Ur requirements.txt
+  fi
 fi
 
