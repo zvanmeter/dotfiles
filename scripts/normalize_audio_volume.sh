@@ -14,7 +14,7 @@ echo "Target Average Loundess is ${TARGET_LOUDNESS_IN_DB}"
 
 function printVolumeStats () {
   fileName="${1}"
-  echo "Volume Stats for ${INPUT_FILE}:"
+  echo "Volume Stats for ${fileName}:"
   ffmpeg \
     -i "${fileName}" \
     -filter:a volumedetect \

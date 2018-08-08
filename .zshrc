@@ -113,6 +113,7 @@ alias ting='play roadman_shaq_gun_sound_freestyle'
 alias rg='play eminem_rap_god'
 alias shut='play jack_black_listen_to_my_order'
 alias galva='play galva_pronunciation'
+alias keke='play drake_in_my_feelings_hook'
 
 alias pc='open -a pycharm "$(git rev-parse --show-toplevel || echo ".")"'
 alias st='open -a sourcetree "$(git rev-parse --show-toplevel || echo ".")"'
