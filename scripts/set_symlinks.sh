@@ -95,6 +95,7 @@ installCoreBrew () {
   brewInstaller direnv
   brewInstaller exa
   brewInstaller fd
+  brewInstaller fzf
   brewInstaller git
   brewInstaller gnu-sed
   brewInstaller grep

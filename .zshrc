@@ -45,6 +45,8 @@ eval "$(direnv hook zsh)"
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/etc/profile.d/z.sh
+source /usr/local/opt/fzf/shell/completion.zsh
+source /usr/local/opt/fzf/shell/key-bindings.zsh
 
 alias gitip='echo "git clone git://$(ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '\''{print $2}'\'')/"'
 alias gitserve='git daemon --reuseaddr --base-path=. --export-all --verbose --enable=receive-pack'
