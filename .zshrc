@@ -113,6 +113,7 @@ alias shut='play jack_black_listen_to_my_order'
 alias standup='play stand_up'
 alias ting='play roadman_shaq_gun_sound_freestyle'
 alias train='play chugga'
+alias vin='play dashboard_confessional_vindicated_hook'
 alias walk='play midnight_cowboy_im_walkin_here'
 
 alias pc='open -a pycharm "$(git rev-parse --show-toplevel || echo ".")"'
