@@ -9,7 +9,6 @@ ZSH_THEME="robbyrussell"
 HYPHEN_INSENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
-BREW="$(brew --prefix)"
 
 # Plugins loaded from ~/.oh-my-zsh/plugins/*
 plugins=(
@@ -28,8 +27,8 @@ source "${ZSH}/oh-my-zsh.sh"
 
 path=(
   "${HOME}/bin"
-  "${BREW}/sbin"
-  "${BREW}/bin"
+  /usr/local/sbin
+  /usr/local/bin
   /usr/bin
   /bin
   /usr/sbin
@@ -39,7 +38,7 @@ path=(
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
-
+BREW="$(brew --prefix)"
 eval "$(direnv hook zsh)"
 source "${BREW}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "${BREW}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
@@ -72,6 +71,7 @@ alias sqlwith='clippaste | sq | paren | comma | clipcopy && pline'
 alias sqlwithint='clippaste | paren | comma | clipcopy && pline'
 alias cs='clippaste | sort -n | clipcopy && pline'
 alias csu='clippaste | sort -n | uniq | clipcopy && pline'
+alias brew='HOMEBREW_AUTO_UPDATE_SECS="86400" brew'
 unalias fd
 
 function http(){
