@@ -34,7 +34,6 @@ path=(
   /bin
   /usr/sbin
   /sbin
-  "${HOME}/go/bin"
 )
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
@@ -57,14 +56,11 @@ alias zshrc='${EDITOR} ~/.zshrc && zr'
 alias zr='source ~/.zshrc'
 alias l='exa -abghl --time-style long-iso'
 alias ll='l --sort modified -r --color always | head -21'
-alias tmux='env TERM=screen-256color tmux'
 alias C='clipcopy' #ohmyzsh builtin fuction
 alias paste='clippaste' #overrides Unix paste, ohmyzsh function
 alias csv='sed "s/,,/, ,/g;s/,,/, ,/g" | column -s, -t'
 alias tsv='sed "s/^\t/ \t/g;s/\t\t/\t \t/g;s/\t\t/\ty\t/g" | column -s$'"'"'\t'"'"' -t'
 alias trim='awk '"'"'{$1=$1};1'"'"''
-alias gulp='npm run gulp'
-alias jspm='npm run jspm'
 alias paren='sed -e "s/^/(/" -e "s/$/)/"'
 alias dq='sed -e "s/^/\"/" -e "s/$/\"/"'
 alias sq='sed -e "s/^/'"'"'/" -e "s/$/'"'"'/"'
@@ -100,17 +96,13 @@ alias bieb='play baby_opening'
 alias blast='play instant_rap_air_horn'
 alias boo='play boo'
 alias cantina='play star_wars_cantina_music'
-alias chant='play tibetan_monk_chant'
 alias cmo='play cash_me_outside 7'
 alias dv='play star_wars_imperial_march'
 alias forge='play what_is_the_forge'
 alias galva='play galva_pronunciation'
-alias halo='play halo_title_theme'
-alias herd='play swedish_cattle_herding_call'
 alias hsf='play hawaiian_shirt_friday'
 alias keke='play drake_in_my_feelings_hook'
 alias lol='play laugh_track'
-alias rg='play eminem_rap_god'
 alias shut='play jack_black_listen_to_my_order'
 alias standup='play stand_up'
 alias ting='play roadman_shaq_gun_sound_freestyle'
