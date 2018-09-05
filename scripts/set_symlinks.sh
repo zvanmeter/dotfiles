@@ -9,7 +9,7 @@ cd ${HOME}
 # Run this script
 
 BREW_INSTALLED="$(brew list -1)"
-BREW_INSTALL_DIR='/usr/local/bin'
+BREW_BIN="$(brew --prefix)/bin'
 
 makeDirectories () {
   mkdir -p 'code/me'
@@ -54,8 +54,8 @@ setBinLinks () {
 }
 
 setBinAliases () {
-  aliasSymLinker pip "${BREW_INSTALL_DIR}/pip2"
-  aliasSymLinker python "${BREW_INSTALL_DIR}/python2"
+  aliasSymLinker pip "${BREW_BIN}/pip2"
+  aliasSymLinker python "${BREW_BIN}/python2"
 }
 
 linkHomeDirDotFiles () {
@@ -68,7 +68,7 @@ linkHomeDirDotFiles () {
 }
 
 setDefaultShell () {
-  brew_zsh_path="${BREW_INSTALL_DIR}/zsh"
+  brew_zsh_path="${BREW_BIN}/zsh"
   mac_os_current_shell="$(dscl . -read /Users/$USER UserShell | cut -d ' ' -f2-)"
 
   if ! grep -q "${brew_zsh_path}" /etc/shells; then

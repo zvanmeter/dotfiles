@@ -9,6 +9,7 @@ ZSH_THEME="robbyrussell"
 HYPHEN_INSENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
+BREW="$(brew --prefix)"
 
 # Plugins loaded from ~/.oh-my-zsh/plugins/*
 plugins=(
@@ -27,9 +28,8 @@ source "${ZSH}/oh-my-zsh.sh"
 
 path=(
   "${HOME}/bin"
-  /usr/local
-  /usr/local/sbin
-  /usr/local/bin
+  "${BREW}/sbin"
+  "${BREW}/bin"
   /usr/bin
   /bin
   /usr/sbin
@@ -42,11 +42,11 @@ path=(
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 
 eval "$(direnv hook zsh)"
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/etc/profile.d/z.sh
-source /usr/local/opt/fzf/shell/completion.zsh
-source /usr/local/opt/fzf/shell/key-bindings.zsh
+source "${BREW}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "${BREW}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "${BREW}/etc/profile.d/z.sh"
+source "${BREW}/opt/fzf/shell/completion.zsh"
+source "${BREW}/opt/fzf/shell/key-bindings.zsh"
 
 alias gitip='echo "git clone git://$(ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '\''{print $2}'\'')/"'
 alias gitserve='git daemon --reuseaddr --base-path=. --export-all --verbose --enable=receive-pack'
