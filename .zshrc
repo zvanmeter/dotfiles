@@ -71,7 +71,7 @@ alias sqlwith='clippaste | sq | paren | comma | clipcopy && pline'
 alias sqlwithint='clippaste | paren | comma | clipcopy && pline'
 alias cs='clippaste | sort -n | clipcopy && pline'
 alias csu='clippaste | sort -n | uniq | clipcopy && pline'
-alias brew='HOMEBREW_AUTO_UPDATE_SECS="86400" brew'
+alias brew='HOMEBREW_NO_AUTO_UPDATE=1 brew'
 unalias fd
 
 function http(){
