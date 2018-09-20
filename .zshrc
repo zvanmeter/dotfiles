@@ -24,7 +24,7 @@ plugins=(
   web-search
 )
 source "${ZSH}/oh-my-zsh.sh"
-
+setopt HIST_FIND_NO_DUPS
 path=(
   "${HOME}/bin"
   /usr/local/sbin
