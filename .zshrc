@@ -46,10 +46,20 @@ source "${BREW}/etc/profile.d/z.sh"
 source "${BREW}/opt/fzf/shell/completion.zsh"
 source "${BREW}/opt/fzf/shell/key-bindings.zsh"
 
+function gitOriginDefault(){
+  git symbolic-ref refs/remotes/origin/HEAD  --short| cut -d/ -f2-
+}
+
+alias gcm='git checkout $(gitOriginDefault)'
+alias gmom='git merge origin/$(gitOriginDefault)'
+alias grbm='git rebase $(gitOriginDefault)'
+
 alias gitip='echo "git clone git://$(ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '\''{print $2}'\'')/"'
 alias gitserve='git daemon --reuseaddr --base-path=. --export-all --verbose --enable=receive-pack'
 alias gserve='gitip && gitserve'
 alias gu='git reset --soft HEAD~'
+alias god='git remote set-head origin'
+alias gud='gcm && git fetch --all --prune && ggpull'
 alias path='echo ${PATH} | tr ":" "\n"'
 alias zshrc='${EDITOR} ~/.zshrc && zr'
 alias zr='source ~/.zshrc'
