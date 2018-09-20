@@ -50,6 +50,8 @@ function gitOriginDefault(){
   git symbolic-ref refs/remotes/origin/HEAD  --short| cut -d/ -f2-
 }
 
+alias gbda='gud && git branch --merged | grep -vE "^(\*|\s*($(git_current_branch)|master|develop|dev)\s*$)" | xargs -n 1 git branch -d'
+alias gbdo='gud && git branch --remotes --merged | grep origin | sed "s,.*origin/,,"| grep -vE "^($(git_current_branch)|master|develop|dev)\s*$" | xargs -n 1 git push --delete origin'
 alias gcm='git checkout $(gitOriginDefault)'
 alias gmom='git merge origin/$(gitOriginDefault)'
 alias grbm='git rebase $(gitOriginDefault)'
