@@ -46,6 +46,19 @@ source "${BREW}/etc/profile.d/z.sh"
 source "${BREW}/opt/fzf/shell/completion.zsh"
 source "${BREW}/opt/fzf/shell/key-bindings.zsh"
 
+function http(){
+  httpStatusCode="${1}"
+  curl -s "http://httpcode.info/${httpStatusCode}" | sed -e "/\s*</d" -e "/^\s*$/d"
+}
+
+function play(){
+  fileName=${1}
+  # 7=Max, 3=Mid, 0=Mute
+  volume=${2}
+  [ -n "${volume}" ] && osascript -e "set Volume ${volume}"
+  (afplay "${HOME}/sound_clips/${fileName}.mp3"&)
+}
+
 function gitOriginDefault(){
   git symbolic-ref refs/remotes/origin/HEAD  --short| cut -d/ -f2-
 }
@@ -86,18 +99,6 @@ alias csu='clippaste | sort -n | uniq | clipcopy && pline'
 alias brew='HOMEBREW_NO_AUTO_UPDATE=1 brew'
 unalias fd
 
-function http(){
-  httpStatusCode="${1}"
-  curl -s "http://httpcode.info/${httpStatusCode}" | sed -e "/\s*</d" -e "/^\s*$/d"
-}
-
-function play(){
-  fileName=${1}
-  # 7=Max, 3=Mid, 0=Mute
-  volume=${2}
-  [ -n "${volume}" ] && osascript -e "set Volume ${volume}"
-  (afplay "${HOME}/sound_clips/${fileName}.mp3"&)
-}
 
 ##MAC Specific
 alias apfix='sudo killall -9 AirPlayUIAgent && sudo killall -9 AirPlayXPCHelper'
