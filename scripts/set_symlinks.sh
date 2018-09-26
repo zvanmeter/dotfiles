@@ -119,6 +119,8 @@ generateGitHubKey () {
   gitHubKeyFile="${HOME}/.ssh/github"
   if [ ! -f "${gitHubKeyFile}" ]; then
     ssh-keygen -t rsa -b 4096 -f "${gitHubKeyFile}" -N ''
+    echo "Host github.com" >> .ssh/config
+    echo "  IdentityFile ${gitHubKeyFile}" >> .ssh/config
   fi
 }
 
