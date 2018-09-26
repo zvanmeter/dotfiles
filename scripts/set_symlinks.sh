@@ -9,7 +9,7 @@ cd ${HOME}
 # Run this script
 
 BREW_INSTALLED="$(brew list -1)"
-BREW_BIN="$(brew --prefix)/bin'
+BREW_BIN="$(brew --prefix)/bin"
 
 makeDirectories () {
   mkdir -p 'code/me'
@@ -136,5 +136,5 @@ linkHomeDirDotFiles
 setDefaultShell
 setBinLinks
 setBinAliases
-generateGitHubKeuy
+generateGitHubKey
 addTouchBarToSudo
