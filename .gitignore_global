@@ -13,3 +13,4 @@ debug-*
 spike-*
 venv
 .venv
+.env
