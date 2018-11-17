@@ -60,7 +60,9 @@ function play(){
 }
 
 function gitOriginDefault(){
-  git symbolic-ref refs/remotes/origin/HEAD  --short| cut -d/ -f2-
+  local defaultDefault='origin/master'
+  local originDefault="$(git symbolic-ref refs/remotes/origin/HEAD --short 2> /dev/null)"
+  echo "${originDefaultn:-${defaultDefault}}" | cut -d/ -f2-
 }
 
 alias gbda='gud && git branch --merged | grep -vE "^(\*|\s*($(git_current_branch)|master|develop|dev)\s*$)" | xargs -n 1 git branch -d'
@@ -68,6 +70,7 @@ alias gbdo='gud && git branch --remotes --merged | grep origin | sed "s,.*origin
 alias gcm='git checkout $(gitOriginDefault)'
 alias gmom='git merge origin/$(gitOriginDefault)'
 alias grbm='git rebase $(gitOriginDefault)'
+alias gsta='git stask --keep-index --incluce-untracked'
 
 alias gitip='echo "git clone git://$(ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '\''{print $2}'\'')/"'
 alias gitserve='git daemon --reuseaddr --base-path=. --export-all --verbose --enable=receive-pack'
