@@ -62,7 +62,7 @@ function play(){
 function gitOriginDefault(){
   local defaultDefault='origin/master'
   local originDefault="$(git symbolic-ref refs/remotes/origin/HEAD --short 2> /dev/null)"
-  echo "${originDefaultn:-${defaultDefault}}" | cut -d/ -f2-
+  echo "${originDefault:-${defaultDefault}}" | cut -d/ -f2-
 }
 
 alias gbda='gud && git branch --merged | grep -vE "^(\*|\s*($(git_current_branch)|master|develop|dev)\s*$)" | xargs -n 1 git branch -d'
