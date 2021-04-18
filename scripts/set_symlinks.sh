@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-set -e
-cd ${HOME}
+set -euo
+cd "${HOME}"
 
 # Restore shell history
 # Restore ssh
@@ -37,7 +37,7 @@ dotFileSymLinker () {
 scriptSymLinker () {
   binName=${1}
   scriptName=${2}
-  symLinker ${HOME}/dotfiles/scripts/${scriptName} bin/${binName}
+  symLinker "${HOME}/dotfiles/scripts/${scriptName}" "bin/${binName}"
 }
 
 aliasSymLinker () {
@@ -75,8 +75,8 @@ setDefaultShell () {
 
 brewInstaller () {
   toInstall="${1}"
-  BREW_INSTALLED="$(brew list -1)"
-  if ! echo "${BREW_INSTALLED}" | grep -q "^${toInstall}$" ; then
+  brewInstalled="$(brew list -1)"
+  if ! echo "${brewInstalled}" | grep -q "^${toInstall}$" ; then
     HOMEBREW_NO_AUTO_UPDATE=1 brew install "${toInstall}"
   fi
 }
