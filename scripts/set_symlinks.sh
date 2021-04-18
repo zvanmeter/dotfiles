@@ -53,11 +53,6 @@ setBinLinks () {
   scriptSymLinker team team_contact_details.sh
 }
 
-setBinAliases () {
-  aliasSymLinker pip "${BREW_BIN}/pip2"
-  aliasSymLinker python "${BREW_BIN}/python2"
-}
-
 linkHomeDirDotFiles () {
   dotFileSymLinker .gitconfig
   dotFileSymLinker .gitignore_global
@@ -101,8 +96,6 @@ installCoreBrew () {
   brewInstaller grep
   brewInstaller jq
   brewInstaller pipenv
-  brewInstaller python
-  brewInstaller python@2
   brewInstaller vim
   brewInstaller z
   brewInstaller zsh
@@ -137,6 +130,5 @@ makeDirectories
 linkHomeDirDotFiles
 setDefaultShell
 setBinLinks
-setBinAliases
 generateGitHubKey
 addTouchBarToSudo
