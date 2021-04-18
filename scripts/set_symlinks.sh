@@ -8,7 +8,6 @@ cd ${HOME}
 # Clone this repo to code/me/dotfiles
 # Run this script
 
-BREW_INSTALLED="$(brew list -1)"
 BREW_BIN="$(brew --prefix)/bin"
 
 makeDirectories () {
@@ -64,23 +63,21 @@ linkHomeDirDotFiles () {
 
 setDefaultShell () {
   brew_zsh_path="${BREW_BIN}/zsh"
-  mac_os_current_shell="$(dscl . -read /Users/$USER UserShell | cut -d ' ' -f2-)"
 
   if ! grep -q "${brew_zsh_path}" /etc/shells; then
+    echo "Adding ${brew_zsh_path} to /etc/shells"
     echo "${brew_zsh_path}" | sudo tee -a /etc/shells > /dev/null
   fi
 
-  if [ ${brew_zsh_path} != ${mac_os_current_shell} ]; then
-    chsh -s "${brew_zsh_path}"
-  fi
+  echo "Setting default shell to ${brew_zsh_path}"
+  chsh -s "${brew_zsh_path}"
 }
 
 brewInstaller () {
   toInstall="${1}"
-
+  BREW_INSTALLED="$(brew list -1)"
   if ! echo "${BREW_INSTALLED}" | grep -q "^${toInstall}$" ; then
     HOMEBREW_NO_AUTO_UPDATE=1 brew install "${toInstall}"
-    BREW_INSTALLED="$(brew list -1)"
   fi
 }
 
