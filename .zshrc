@@ -27,6 +27,7 @@ source "${ZSH}/oh-my-zsh.sh"
 setopt HIST_FIND_NO_DUPS
 path=(
   "${HOME}/bin"
+  /home/linuxbrew/.linuxbrew/bin
   /usr/local/sbin
   /usr/local/bin
   /usr/bin
