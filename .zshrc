@@ -23,7 +23,6 @@ plugins=(
   sudo
   web-search
 )
-source "${ZSH}/oh-my-zsh.sh"
 setopt HIST_FIND_NO_DUPS
 path=(
   "${HOME}/bin"
@@ -35,6 +34,7 @@ path=(
   /usr/sbin
   /sbin
 )
+source "${ZSH}/oh-my-zsh.sh"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -101,7 +101,6 @@ alias sqlwithint='clippaste | paren | comma | clipcopy && pline'
 alias cs='clippaste | sort -n | clipcopy && pline'
 alias csu='clippaste | sort -n | uniq | clipcopy && pline'
 alias brew='HOMEBREW_NO_AUTO_UPDATE=1 brew'
-unalias fd
 
 
 ##MAC Specific
