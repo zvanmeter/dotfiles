@@ -14,12 +14,11 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(
   brew
   common-aliases
-  copydir
+  copypath
   copyfile
   docker
   fasd
   git
-  osx
   sudo
   web-search
 )
