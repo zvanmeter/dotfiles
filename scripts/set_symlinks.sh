@@ -85,7 +85,7 @@ installCoreBrew () {
   brewInstaller ack
   brewInstaller coreutils
   brewInstaller direnv
-  brewInstaller exa
+  brewInstaller eza
   brewInstaller fd
   brewInstaller fzf
   brewInstaller git
