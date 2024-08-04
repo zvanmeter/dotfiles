@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -euo
+set -euo pipefail
 cd "${HOME}"
 
 # Restore shell history
@@ -19,18 +19,14 @@ makeDirectories () {
 
 symLinker () {
   source="${1}"
-  target="${2}"
-
-  if [ -z "${target}" ]; then
-        target="$(basename "${source}")"
-  fi
+  target="${2:-$(basename ${source})}"
 
   ln -sfn "${source}" "${target}"
 }
 
 dotFileSymLinker () {
   dotFileName=${1}
-  dotFileLinkName=${2}
+  dotFileLinkName=${2:-${dotFileName}}
   symLinker "dotfiles/${dotFileName}" "${dotFileLinkName}"
 }
 
@@ -78,6 +74,8 @@ brewInstaller () {
   brewInstalled="$(brew list -1)"
   if ! echo "${brewInstalled}" | grep -q "^${toInstall}$" ; then
     HOMEBREW_NO_AUTO_UPDATE=1 brew install "${toInstall}"
+  else
+    echo "${toInstall} is already installed."
   fi
 }
 
